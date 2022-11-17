@@ -1,0 +1,11 @@
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "[dockerfile]": {
+    "editor.formatOnSave": false
+  },
+  "clangd.path": "/usr/bin/clangd-15",
+  "clangd.arguments": [
+    "-compile-commands-dir=${workspaceFolder}/build"
+  ]
+}

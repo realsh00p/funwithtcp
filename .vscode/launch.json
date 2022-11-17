@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "debug - funwithprofiler",
+      "type": "cppdbg",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/build/bin/funwithprofiler",
+      "args": [
+        "--sundaram",
+        "100",
+        "--iterations",
+        "100"
+      ],
+    },
+  ]
+}

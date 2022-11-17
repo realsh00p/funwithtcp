@@ -1,0 +1,11 @@
+{
+  "name": "funwithloggers",
+  "dockerFile": "Dockerfile",
+  "runArgs": [],
+  "extensions": [
+    "llvm-vs-code-extensions.vscode-clangd",
+    "ms-vscode.cmake-tools",
+    "ms-vscode.cpptools",
+    "ms-python.python"
+  ]
+}
