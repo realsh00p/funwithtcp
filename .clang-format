@@ -1,2 +1,5 @@
 BasedOnStyle: LLVM
+BreakBeforeBraces: WebKit
 AlwaysBreakTemplateDeclarations: Yes
+IndentWidth: 2
+TabWidth: 2
