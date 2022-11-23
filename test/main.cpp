@@ -22,7 +22,6 @@ void handle_closed()
 
 int main(void)
 {
-
   EventLoop event_loop{PORT};
   event_loop.accept(std::bind(handle_received, std::placeholders::_1),
                     std::bind(handle_closed));

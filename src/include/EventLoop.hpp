@@ -12,6 +12,13 @@ static constexpr auto BUF_SIZE{8192};
 namespace internal {
 
 class Session {
+private:
+  boost::asio::ip::tcp::socket socket_;
+  std::function<void(std::vector<char>)> cb_received_;
+  std::function<void()> cb_closed_;
+
+  std::array<char, BUF_SIZE> data_{{0}};
+
 public:
   Session(boost::asio::io_service &io_service,
           std::function<void(std::vector<char>)> cb_received,
@@ -42,18 +49,15 @@ public:
       delete this;
     }
   }
-
-private:
-  boost::asio::ip::tcp::socket socket_;
-  std::function<void(std::vector<char>)> cb_received_;
-  std::function<void()> cb_closed_;
-
-  std::array<char, BUF_SIZE> data_{{0}};
 };
 
 } // namespace internal
 
 class EventLoop {
+private:
+  boost::asio::io_service io_service_;
+  boost::asio::ip::tcp::acceptor acceptor_;
+
 public:
   EventLoop(std::uint16_t port)
       : io_service_(),
@@ -92,8 +96,4 @@ public:
   }
 
   void await() { io_service_.run(); }
-
-private:
-  boost::asio::io_service io_service_;
-  boost::asio::ip::tcp::acceptor acceptor_;
 };
