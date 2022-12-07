@@ -23,5 +23,6 @@ RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - >/dev/n
         vim && \
     rm -rf /var/lib/apt/lists*
 
-RUN apt-get install -y \
-      libboost1.74-all-dev
+RUN apt-get update && apt-get \
+      install -y \
+        libboost1.74-dev
